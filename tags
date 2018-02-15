@@ -1,0 +1,205 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/d9d7aa70/
+AUTHOR	setup.py	/^AUTHOR = '''Nelson Leung, Mohamed Abdelhafez,$/;"	v
+AUTHOR_EMAIL	setup.py	/^AUTHOR_EMAIL = 'nelsonleuon@uchicago.edu'$/;"	v
+Analysis	quantum_optimal_control/core/analysis.py	/^class Analysis:$/;"	c
+Basis	quantum_optimal_control/helper_functions/grape_functions.py	/^def Basis(a,N,r):$/;"	f
+Bin	quantum_optimal_control/helper_functions/grape_functions.py	/^def Bin(a,N):$/;"	f
+CLASSIFIERS	setup.py	/^CLASSIFIERS = [$/;"	v
+Choose_exp_terms	quantum_optimal_control/core/system_parameters.py	/^    def Choose_exp_terms(self, d): $/;"	m	class:SystemParameters
+Convergence	quantum_optimal_control/core/convergence.py	/^class Convergence:$/;"	c
+DESCRIPTION	setup.py	/^DESCRIPTION = 'Tensorflow implementation of GRAPE, a quantum optimal control algorithm.'$/;"	v
+Get_uks	quantum_optimal_control/core/run_session.py	/^    def Get_uks(self):$/;"	m	class:run_session
+Grape	quantum_optimal_control/main_grape/grape.py	/^def Grape(H0, Hops, Hnames, U, total_time, steps, states_concerned_list, convergence=None, U0=No/;"	f
+H0	test.py	/^H0 = H_q$/;"	v
+H5File	quantum_optimal_control/helper_functions/data_management.py	/^class H5File(h5py.File):$/;"	c
+H_q	test.py	/^H_q = np.diag(ens)$/;"	v
+Hadamard	quantum_optimal_control/helper_functions/grape_functions.py	/^def Hadamard (N=1):$/;"	f
+Hnames	test.py	/^Hnames = ['x']$/;"	v
+Hops	test.py	/^Hops = [XI]$/;"	v
+INSTALL_REQUIRES	setup.py	/^INSTALL_REQUIRES = [$/;"	v
+I_q	test.py	/^I_q = np.identity(qubit_state_num)$/;"	v
+KEYWORDS	setup.py	/^KEYWORDS = ['quantum','GRAPE','optimal','control','tensorflow','gpu','qubit']$/;"	v
+LICENSE	setup.py	/^LICENSE = ''$/;"	v
+LONG_DESCRIPTION	setup.py	/^	LONG_DESCRIPTION= readme.read()$/;"	v
+MAINTAINER	setup.py	/^MAINTAINER = AUTHOR$/;"	v
+MAINTAINER_EMAIL	setup.py	/^MAINTAINER_EMAIL = AUTHOR_EMAIL$/;"	v
+MAJOR	setup.py	/^MAJOR = 0$/;"	v
+MICRO	setup.py	/^MICRO = 0 $/;"	v
+MINOR	setup.py	/^MINOR = 1 $/;"	v
+NAME	setup.py	/^NAME = 'quantum_optimal_control'$/;"	v
+PACKAGES	setup.py	/^PACKAGES = [$/;"	v
+PLATFORMS	setup.py	/^PLATFORMS=['linux']$/;"	v
+Q_x	test.py	/^Q_x = np.diag(np.sqrt(np.arange(1, qubit_state_num)), 1) + \\$/;"	v
+Q_y	test.py	/^Q_y = (0+1j) * (np.diag(np.sqrt(np.arange(1, qubit_state_num)), 1) -$/;"	v
+Q_z	test.py	/^Q_z = np.diag(np.arange(0, qubit_state_num))$/;"	v
+REQUIRES	setup.py	/^REQUIRES = [$/;"	v
+RtoCMat	quantum_optimal_control/core/analysis.py	/^    def RtoCMat(self, M):$/;"	m	class:Analysis
+SystemParameters	quantum_optimal_control/core/system_parameters.py	/^class SystemParameters:$/;"	c
+TensorflowState	quantum_optimal_control/core/tensorflow_state.py	/^class TensorflowState:$/;"	c
+U	test.py	/^U = [target_vec_0, target_vec_1]$/;"	v
+U0	test.py	/^U0 = q_identity$/;"	v
+URL	setup.py	/^URL = 'https:\/\/github.com\/SchusterLab\/quantum-optimal-control'$/;"	v
+U_final	test.py	/^uks, U_final = Grape(H0, Hops, Hnames, U, total_time, steps, psi0, convergence=convergence, draw/;"	v
+VERSION	setup.py	/^VERSION = '{0}.{1}.{2}'.format(MAJOR,MINOR,MICRO)$/;"	v
+XI	test.py	/^XI = Q_x$/;"	v
+ZI	test.py	/^ZI = Q_z$/;"	v
+__init__	quantum_optimal_control/core/analysis.py	/^    def __init__(self, sys_para, tf_final_state, tf_ops_weight, tf_unitary_scale, tf_inter_vecs)/;"	m	class:Analysis
+__init__	quantum_optimal_control/core/convergence.py	/^    def __init__(self,sys_para,time_unit,convergence):$/;"	m	class:Convergence
+__init__	quantum_optimal_control/core/run_session.py	/^    def __init__(self, tfs, graph, conv, sys_para, method, show_plots=True, single_simulation=Fa/;"	m	class:run_session
+__init__	quantum_optimal_control/core/system_parameters.py	/^    def __init__(self,H0,Hops,Hnames,U,U0,total_time,steps,states_concerned_list,dressed_info,ma/;"	m	class:SystemParameters
+__init__	quantum_optimal_control/core/tensorflow_state.py	/^    def __init__(self,sys_para):$/;"	m	class:TensorflowState
+__init__	quantum_optimal_control/helper_functions/data_management.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:H5File
+_call_with_path	quantum_optimal_control/helper_functions/data_management.py	/^    def _call_with_path(self, dspath, method, args, kwargs):$/;"	m	class:H5File
+_function	quantum_optimal_control/helper_functions/qutip_verification.py	/^            def _function(t,args=None):$/;"	f	function:qutip_verification.make_get_uks_func	file:
+_get_attrs	quantum_optimal_control/helper_functions/data_management.py	/^    def _get_attrs(self, dspath):$/;"	m	class:H5File
+_get_dset_array	quantum_optimal_control/helper_functions/data_management.py	/^    def _get_dset_array(self, dspath):$/;"	m	class:H5File
+_my_assign_dset	quantum_optimal_control/helper_functions/data_management.py	/^    def _my_assign_dset(self, dspath, ds, val):$/;"	m	class:H5File
+_my_ds_from_path	quantum_optimal_control/helper_functions/data_management.py	/^    def _my_ds_from_path(self, dspath):$/;"	m	class:H5File
+_ping	quantum_optimal_control/helper_functions/data_management.py	/^    def _ping(self):$/;"	m	class:H5File
+_set_attr	quantum_optimal_control/helper_functions/data_management.py	/^    def _set_attr(self, dspath, item, value):$/;"	m	class:H5File
+add	quantum_optimal_control/helper_functions/data_management.py	/^    def add(self, key, data):$/;"	m	class:H5File
+add_data	quantum_optimal_control/helper_functions/data_management.py	/^    def add_data(self, f, key, data):$/;"	m	class:H5File
+append	quantum_optimal_control/helper_functions/data_management.py	/^    def append(self, dataset, pt):$/;"	m	class:H5File
+append_data	quantum_optimal_control/helper_functions/data_management.py	/^    def append_data(self, f, key, data, forceInit=False):$/;"	m	class:H5File
+append_line	quantum_optimal_control/helper_functions/data_management.py	/^    def append_line(self, dataset, line, axis=0):$/;"	m	class:H5File
+append_pt	quantum_optimal_control/helper_functions/data_management.py	/^    def append_pt(self, dataset, pt):$/;"	m	class:H5File
+append_separate_krons	quantum_optimal_control/helper_functions/grape_functions.py	/^def append_separate_krons(op,name,num,state_num,Hops,Hnames,ops_max_amp,amp=4.0): $/;"	f
+approx_exp	quantum_optimal_control/core/system_parameters.py	/^    def approx_exp(self,M,exp_t, scaling_terms): $/;"	m	class:SystemParameters
+approx_expm	quantum_optimal_control/core/system_parameters.py	/^    def approx_expm(self,M,exp_t, scaling_terms): $/;"	m	class:SystemParameters
+baseN	quantum_optimal_control/helper_functions/grape_functions.py	/^def baseN(num,b,numerals="0123456789abcdefghijklmnopqrstuvwxyz"):$/;"	f
+bfgs_optimize	quantum_optimal_control/core/run_session.py	/^    def bfgs_optimize(self, method='L-BFGS-B', jac=True, options=None):$/;"	m	class:run_session
+build_graph	quantum_optimal_control/core/tensorflow_state.py	/^    def build_graph(self):$/;"	m	class:TensorflowState
+c_to_r_mat	quantum_optimal_control/helper_functions/grape_functions.py	/^def c_to_r_mat(M):$/;"	f
+c_to_r_vec	quantum_optimal_control/helper_functions/grape_functions.py	/^def c_to_r_vec(V):$/;"	f
+concerned	quantum_optimal_control/helper_functions/grape_functions.py	/^def concerned(N,levels):$/;"	f
+convergence	test.py	/^convergence = {'rate': 0.1, 'update_step': 1, 'max_iterations': max_iterations,$/;"	v
+current_dir	verify_by_qutip.py	/^current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))$/;"	v
+data_path	test.py	/^data_path = '.'$/;"	v
+decay	test.py	/^decay = 5000  # max_iterations\/2$/;"	v
+display	quantum_optimal_control/core/run_session.py	/^    def display(self):$/;"	m	class:run_session
+dressed_unitary	quantum_optimal_control/helper_functions/grape_functions.py	/^def dressed_unitary(U,v,dressed_id):$/;"	f
+e	test.py	/^e = np.array([0, 1])$/;"	v
+ens	test.py	/^ens = np.array([2*np.pi*ii*(freq_ge) for ii in np.arange(qubit_state_num)])$/;"	v
+freq_ge	test.py	/^freq_ge = 3.9  # GHz$/;"	v
+g	test.py	/^g = 0.2  # GHz$/;"	v
+g	test.py	/^g = np.array([1, 0])$/;"	v
+gaussian	quantum_optimal_control/core/system_parameters.py	/^    def gaussian(self,x, mu = 0. , sig = 1. ):$/;"	m	class:SystemParameters
+get_attrs	quantum_optimal_control/helper_functions/data_management.py	/^    get_attrs = get_dict$/;"	v	class:H5File
+get_convergence	quantum_optimal_control/core/convergence.py	/^    def get_convergence(self):$/;"	m	class:Convergence
+get_dict	quantum_optimal_control/helper_functions/data_management.py	/^    def get_dict(self, group='\/'):$/;"	m	class:H5File
+get_dressed_info	quantum_optimal_control/helper_functions/grape_functions.py	/^def get_dressed_info(H0):$/;"	f
+get_end_results	quantum_optimal_control/core/run_session.py	/^    def get_end_results(self):$/;"	m	class:run_session
+get_error	quantum_optimal_control/core/run_session.py	/^    def get_error(self, uks):$/;"	m	class:run_session
+get_final_state	quantum_optimal_control/core/analysis.py	/^    def get_final_state(self, save=True):$/;"	m	class:Analysis
+get_inner_product	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product(self,psi1,psi2):$/;"	m	class:TensorflowState
+get_inner_product_2D	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product_2D(self,psi1,psi2):$/;"	m	class:TensorflowState
+get_inner_product_3D	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product_3D(self,psi1,psi2):$/;"	m	class:TensorflowState
+get_inter_state_op	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inter_state_op(self,layer):$/;"	m	class:TensorflowState
+get_inter_vecs	quantum_optimal_control/core/analysis.py	/^    def get_inter_vecs(self):$/;"	m	class:Analysis
+get_matexp	quantum_optimal_control/core/tensorflow_state.py	/^        def get_matexp(uks,H_all):$/;"	f	member:TensorflowState.init_defined_functions	file:
+get_matvecexp	quantum_optimal_control/core/tensorflow_state.py	/^        def get_matvecexp(uks,H_all,psi):$/;"	f	member:TensorflowState.init_defined_functions	file:
+get_notes	quantum_optimal_control/helper_functions/data_management.py	/^    def get_notes(self, one_string=False, print_notes=False):$/;"	m	class:H5File
+get_ops_weight	quantum_optimal_control/core/analysis.py	/^    def get_ops_weight(self):$/;"	m	class:Analysis
+get_reg_loss	quantum_optimal_control/core/regularization_functions.py	/^def get_reg_loss(tfs):$/;"	f
+get_state_index	quantum_optimal_control/helper_functions/grape_functions.py	/^def get_state_index(bareindex,dressed_id):$/;"	f
+gridspec	quantum_optimal_control/core/convergence.py	/^import matplotlib.gridspec as gridspec$/;"	I
+hamming_distance	quantum_optimal_control/helper_functions/grape_functions.py	/^def hamming_distance(x):$/;"	f
+init_defined_functions	quantum_optimal_control/core/tensorflow_state.py	/^    def init_defined_functions(self):$/;"	m	class:TensorflowState
+init_guess	quantum_optimal_control/core/system_parameters.py	/^    def init_guess(self):$/;"	m	class:SystemParameters
+init_one_minus_gaussian_envelope	quantum_optimal_control/core/system_parameters.py	/^    def init_one_minus_gaussian_envelope(self):$/;"	m	class:SystemParameters
+init_operators	quantum_optimal_control/core/system_parameters.py	/^    def init_operators(self):$/;"	m	class:SystemParameters
+init_optimizer	quantum_optimal_control/core/tensorflow_state.py	/^    def init_optimizer(self):$/;"	m	class:TensorflowState
+init_system	quantum_optimal_control/core/system_parameters.py	/^    def init_system(self):$/;"	m	class:SystemParameters
+init_tf_inter_propagators	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_inter_propagators(self):$/;"	m	class:TensorflowState
+init_tf_inter_vector_state	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_inter_vector_state(self): $/;"	m	class:TensorflowState
+init_tf_inter_vectors	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_inter_vectors(self):$/;"	m	class:TensorflowState
+init_tf_ops_weight	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_ops_weight(self):$/;"	m	class:TensorflowState
+init_tf_propagator	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_propagator(self):$/;"	m	class:TensorflowState
+init_tf_propagators	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_propagators(self):$/;"	m	class:TensorflowState
+init_tf_vectors	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_vectors(self):$/;"	m	class:TensorflowState
+init_training_loss	quantum_optimal_control/core/tensorflow_state.py	/^    def init_training_loss(self):$/;"	m	class:TensorflowState
+init_utilities	quantum_optimal_control/core/tensorflow_state.py	/^    def init_utilities(self):$/;"	m	class:TensorflowState
+init_variables	quantum_optimal_control/core/tensorflow_state.py	/^    def init_variables(self):$/;"	m	class:TensorflowState
+init_vectors	quantum_optimal_control/core/system_parameters.py	/^    def init_vectors(self):$/;"	m	class:SystemParameters
+is_binary	quantum_optimal_control/helper_functions/grape_functions.py	/^def is_binary(num):$/;"	f
+kron_all	quantum_optimal_control/helper_functions/grape_functions.py	/^def kron_all(op,num,op_2): $/;"	f
+la	quantum_optimal_control/core/system_parameters.py	/^import scipy.linalg as la$/;"	I
+la	quantum_optimal_control/helper_functions/grape_functions.py	/^import scipy.linalg as la$/;"	I
+la	quantum_optimal_control/main_grape/grape.py	/^import scipy.linalg as la$/;"	I
+la	test.py	/^import scipy.linalg as la$/;"	I
+load_config	quantum_optimal_control/helper_functions/data_management.py	/^    def load_config(self):$/;"	m	class:H5File
+load_settings	quantum_optimal_control/helper_functions/data_management.py	/^    def load_settings(self, group='settings'):$/;"	m	class:H5File
+make_get_uks_func	quantum_optimal_control/helper_functions/qutip_verification.py	/^        def make_get_uks_func(id):$/;"	f	function:qutip_verification	file:
+matexp_op	quantum_optimal_control/core/tensorflow_state.py	/^        def matexp_op(uks,H_all):$/;"	f	member:TensorflowState.init_defined_functions	file:
+matexp_op_grad	quantum_optimal_control/core/tensorflow_state.py	/^        def matexp_op_grad(uks,H_all, grad):  $/;"	f	member:TensorflowState.init_defined_functions	file:
+matvecexp_op	quantum_optimal_control/core/tensorflow_state.py	/^        def matvecexp_op(uks,H_all,psi):$/;"	f	member:TensorflowState.init_defined_functions	file:
+matvecexp_op_grad	quantum_optimal_control/core/tensorflow_state.py	/^        def matvecexp_op_grad(uks,H_all,psi, grad):  $/;"	f	member:TensorflowState.init_defined_functions	file:
+max_iterations	test.py	/^max_iterations = 1000$/;"	v
+minimize_opt_fun	quantum_optimal_control/core/run_session.py	/^    def minimize_opt_fun(self, x):$/;"	m	class:run_session
+multi_kron	quantum_optimal_control/helper_functions/grape_functions.py	/^def multi_kron(op,num): $/;"	f
+nn_chain_kron	quantum_optimal_control/helper_functions/grape_functions.py	/^def nn_chain_kron(op, op_I, qubit_num, qubit_state_num): $/;"	f
+note	quantum_optimal_control/helper_functions/data_management.py	/^    def note(self, note):$/;"	m	class:H5File
+np	quantum_optimal_control/core/analysis.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/core/convergence.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/core/regularization_functions.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/core/run_session.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/core/system_parameters.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/core/tensorflow_state.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/helper_functions/data_management.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/helper_functions/grape_functions.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/helper_functions/qutip_verification.py	/^import numpy as np$/;"	I
+np	quantum_optimal_control/main_grape/grape.py	/^import numpy as np$/;"	I
+np	test.py	/^import numpy as np$/;"	I
+np	verify_by_qutip.py	/^import numpy as np$/;"	I
+ops_max_amp	test.py	/^ops_max_amp = [2*np.pi*0.3]$/;"	v
+plot_inter_vecs_general	quantum_optimal_control/core/convergence.py	/^    def plot_inter_vecs_general(self,pop_inter_vecs,start):$/;"	m	class:Convergence
+plot_summary	quantum_optimal_control/core/convergence.py	/^    def plot_summary(self):$/;"	m	class:Convergence
+plt	quantum_optimal_control/core/convergence.py	/^import matplotlib.pyplot as plt$/;"	I
+psi0	test.py	/^psi0 = [g, e]$/;"	v
+q_identity	test.py	/^q_identity = np.identity(qubit_state_num**qubit_num)$/;"	v
+qft	quantum_optimal_control/helper_functions/grape_functions.py	/^def qft(N):$/;"	f
+qt	quantum_optimal_control/helper_functions/qutip_verification.py	/^import qutip as qt$/;"	I
+qubit_num	test.py	/^qubit_num = 1$/;"	v
+qubit_state_num	test.py	/^qubit_state_num = 2$/;"	v
+qutip_verification	quantum_optimal_control/helper_functions/qutip_verification.py	/^def qutip_verification(datafile,atol):$/;"	f
+rd	quantum_optimal_control/main_grape/grape.py	/^import random as rd$/;"	I
+reg_coeffs	test.py	/^reg_coeffs = {'envelope': 5.0, 'dwdt': 0.001}$/;"	v
+reset_convergence	quantum_optimal_control/core/convergence.py	/^    def reset_convergence(self):$/;"	m	class:Convergence
+run_session	quantum_optimal_control/core/run_session.py	/^class run_session:$/;"	c
+rx	quantum_optimal_control/helper_functions/grape_functions.py	/^def rx (theta):$/;"	f
+rz	quantum_optimal_control/helper_functions/grape_functions.py	/^def rz(theta):$/;"	f
+save_attrs	quantum_optimal_control/helper_functions/data_management.py	/^    save_attrs = save_dict$/;"	v	class:H5File
+save_data	quantum_optimal_control/core/run_session.py	/^    def save_data(self):$/;"	m	class:run_session
+save_dict	quantum_optimal_control/helper_functions/data_management.py	/^    def save_dict(self, dict, group='\/'):$/;"	m	class:H5File
+save_evol	quantum_optimal_control/core/convergence.py	/^    def save_evol(self,anly):$/;"	m	class:Convergence
+save_settings	quantum_optimal_control/helper_functions/data_management.py	/^    def save_settings(self, dic, group='settings'):$/;"	m	class:H5File
+set_labels	quantum_optimal_control/helper_functions/data_management.py	/^    def set_labels(self, dataset, x_lab, y_lab, z_lab=None):$/;"	m	class:H5File
+set_range	quantum_optimal_control/helper_functions/data_management.py	/^    def set_range(self, dataset, xmin, xmax, ymin=None, ymax=None):$/;"	m	class:H5File
+sort_ev	quantum_optimal_control/helper_functions/grape_functions.py	/^def sort_ev(v,dressed_id):$/;"	f
+start_adam_optimizer	quantum_optimal_control/core/run_session.py	/^    def start_adam_optimizer(self):$/;"	m	class:run_session
+state_transfer	test.py	/^state_transfer = True$/;"	v
+states_draw_list	test.py	/^states_draw_list = [0, 1]$/;"	v
+states_draw_names	test.py	/^states_draw_names = ['0', '1']$/;"	v
+steps	test.py	/^steps = 600$/;"	v
+target_vec_0	test.py	/^target_vec_0 = np.zeros(qubit_state_num**qubit_num, dtype=complex)$/;"	v
+target_vec_1	test.py	/^target_vec_1 = np.zeros(qubit_state_num**qubit_num, dtype=complex)$/;"	v
+test_pulse	verify_by_qutip.py	/^test_pulse = '.\/00000_spin_pi_speed_up.h5'$/;"	v
+tf	quantum_optimal_control/core/analysis.py	/^import tensorflow as tf$/;"	I
+tf	quantum_optimal_control/core/regularization_functions.py	/^import tensorflow as tf$/;"	I
+tf	quantum_optimal_control/core/run_session.py	/^import tensorflow as tf$/;"	I
+tf	quantum_optimal_control/core/tensorflow_state.py	/^import tensorflow as tf$/;"	I
+tf	quantum_optimal_control/main_grape/grape.py	/^import tensorflow as tf$/;"	I
+total_time	test.py	/^total_time = 6.0$/;"	v
+transmon_gate	quantum_optimal_control/helper_functions/grape_functions.py	/^def transmon_gate(gate,levels):$/;"	f
+uks	test.py	/^uks, U_final = Grape(H0, Hops, Hnames, U, total_time, steps, psi0, convergence=convergence, draw/;"	v
+update_and_save	quantum_optimal_control/core/run_session.py	/^    def update_and_save(self):$/;"	m	class:run_session
+update_plot_summary	quantum_optimal_control/core/convergence.py	/^    def update_plot_summary(self,last_cost, last_reg_cost, anly):$/;"	m	class:Convergence
+version	version.py	/^			version = 0.1.0$/;"	v
+version_file	setup.py	/^version_file = 'version.py'$/;"	v
+write_version	setup.py	/^def write_version(version_file=version_file):$/;"	f

@@ -1,9 +1,9 @@
 import os 
 import sys 
 
-#Make sure python 2.7
-if not (sys.version_info[0] == 2 and sys.version_info[1] == 7):
-    sys.exit("Sorry, only Python 2.7 is currently supported currently.")
+#  Make sure python 3
+if not (sys.version_info[0] == 3):
+    sys.exit("Sorry, only Python 3.x is currently supported.")
 
 try:
 	from setuptools import setup 
