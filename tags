@@ -4,7 +4,7 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	0.0.0	/d9d7aa70/
+!_TAG_PROGRAM_VERSION	0.0.0	/66b4867b/
 AUTHOR	setup.py	/^AUTHOR = '''Nelson Leung, Mohamed Abdelhafez,$/;"	v
 AUTHOR_EMAIL	setup.py	/^AUTHOR_EMAIL = 'nelsonleuon@uchicago.edu'$/;"	v
 Analysis	quantum_optimal_control/core/analysis.py	/^class Analysis:$/;"	c
@@ -53,7 +53,7 @@ __init__	quantum_optimal_control/core/analysis.py	/^    def __init__(self, sys_p
 __init__	quantum_optimal_control/core/convergence.py	/^    def __init__(self,sys_para,time_unit,convergence):$/;"	m	class:Convergence
 __init__	quantum_optimal_control/core/run_session.py	/^    def __init__(self, tfs, graph, conv, sys_para, method, show_plots=True, single_simulation=Fa/;"	m	class:run_session
 __init__	quantum_optimal_control/core/system_parameters.py	/^    def __init__(self,H0,Hops,Hnames,U,U0,total_time,steps,states_concerned_list,dressed_info,ma/;"	m	class:SystemParameters
-__init__	quantum_optimal_control/core/tensorflow_state.py	/^    def __init__(self,sys_para):$/;"	m	class:TensorflowState
+__init__	quantum_optimal_control/core/tensorflow_state.py	/^    def __init__(self, sys_para):$/;"	m	class:TensorflowState
 __init__	quantum_optimal_control/helper_functions/data_management.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:H5File
 _call_with_path	quantum_optimal_control/helper_functions/data_management.py	/^    def _call_with_path(self, dspath, method, args, kwargs):$/;"	m	class:H5File
 _function	quantum_optimal_control/helper_functions/qutip_verification.py	/^            def _function(t,args=None):$/;"	f	function:qutip_verification.make_get_uks_func	file:
@@ -97,13 +97,13 @@ get_dressed_info	quantum_optimal_control/helper_functions/grape_functions.py	/^d
 get_end_results	quantum_optimal_control/core/run_session.py	/^    def get_end_results(self):$/;"	m	class:run_session
 get_error	quantum_optimal_control/core/run_session.py	/^    def get_error(self, uks):$/;"	m	class:run_session
 get_final_state	quantum_optimal_control/core/analysis.py	/^    def get_final_state(self, save=True):$/;"	m	class:Analysis
-get_inner_product	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product(self,psi1,psi2):$/;"	m	class:TensorflowState
-get_inner_product_2D	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product_2D(self,psi1,psi2):$/;"	m	class:TensorflowState
-get_inner_product_3D	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product_3D(self,psi1,psi2):$/;"	m	class:TensorflowState
-get_inter_state_op	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inter_state_op(self,layer):$/;"	m	class:TensorflowState
+get_inner_product	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product(self, psi1, psi2):$/;"	m	class:TensorflowState
+get_inner_product_2D	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product_2D(self, psi1, psi2):$/;"	m	class:TensorflowState
+get_inner_product_3D	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inner_product_3D(self, psi1, psi2):$/;"	m	class:TensorflowState
+get_inter_state_op	quantum_optimal_control/core/tensorflow_state.py	/^    def get_inter_state_op(self, layer):$/;"	m	class:TensorflowState
 get_inter_vecs	quantum_optimal_control/core/analysis.py	/^    def get_inter_vecs(self):$/;"	m	class:Analysis
-get_matexp	quantum_optimal_control/core/tensorflow_state.py	/^        def get_matexp(uks,H_all):$/;"	f	member:TensorflowState.init_defined_functions	file:
-get_matvecexp	quantum_optimal_control/core/tensorflow_state.py	/^        def get_matvecexp(uks,H_all,psi):$/;"	f	member:TensorflowState.init_defined_functions	file:
+get_matexp	quantum_optimal_control/core/tensorflow_state.py	/^        def get_matexp(uks, H_all):$/;"	f	member:TensorflowState.init_defined_functions	file:
+get_matvecexp	quantum_optimal_control/core/tensorflow_state.py	/^        def get_matvecexp(uks, H_all, psi):$/;"	f	member:TensorflowState.init_defined_functions	file:
 get_notes	quantum_optimal_control/helper_functions/data_management.py	/^    def get_notes(self, one_string=False, print_notes=False):$/;"	m	class:H5File
 get_ops_weight	quantum_optimal_control/core/analysis.py	/^    def get_ops_weight(self):$/;"	m	class:Analysis
 get_reg_loss	quantum_optimal_control/core/regularization_functions.py	/^def get_reg_loss(tfs):$/;"	f
@@ -117,7 +117,7 @@ init_operators	quantum_optimal_control/core/system_parameters.py	/^    def init_
 init_optimizer	quantum_optimal_control/core/tensorflow_state.py	/^    def init_optimizer(self):$/;"	m	class:TensorflowState
 init_system	quantum_optimal_control/core/system_parameters.py	/^    def init_system(self):$/;"	m	class:SystemParameters
 init_tf_inter_propagators	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_inter_propagators(self):$/;"	m	class:TensorflowState
-init_tf_inter_vector_state	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_inter_vector_state(self): $/;"	m	class:TensorflowState
+init_tf_inter_vector_state	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_inter_vector_state(self):$/;"	m	class:TensorflowState
 init_tf_inter_vectors	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_inter_vectors(self):$/;"	m	class:TensorflowState
 init_tf_ops_weight	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_ops_weight(self):$/;"	m	class:TensorflowState
 init_tf_propagator	quantum_optimal_control/core/tensorflow_state.py	/^    def init_tf_propagator(self):$/;"	m	class:TensorflowState
@@ -136,10 +136,10 @@ la	test.py	/^import scipy.linalg as la$/;"	I
 load_config	quantum_optimal_control/helper_functions/data_management.py	/^    def load_config(self):$/;"	m	class:H5File
 load_settings	quantum_optimal_control/helper_functions/data_management.py	/^    def load_settings(self, group='settings'):$/;"	m	class:H5File
 make_get_uks_func	quantum_optimal_control/helper_functions/qutip_verification.py	/^        def make_get_uks_func(id):$/;"	f	function:qutip_verification	file:
-matexp_op	quantum_optimal_control/core/tensorflow_state.py	/^        def matexp_op(uks,H_all):$/;"	f	member:TensorflowState.init_defined_functions	file:
-matexp_op_grad	quantum_optimal_control/core/tensorflow_state.py	/^        def matexp_op_grad(uks,H_all, grad):  $/;"	f	member:TensorflowState.init_defined_functions	file:
-matvecexp_op	quantum_optimal_control/core/tensorflow_state.py	/^        def matvecexp_op(uks,H_all,psi):$/;"	f	member:TensorflowState.init_defined_functions	file:
-matvecexp_op_grad	quantum_optimal_control/core/tensorflow_state.py	/^        def matvecexp_op_grad(uks,H_all,psi, grad):  $/;"	f	member:TensorflowState.init_defined_functions	file:
+matexp_op	quantum_optimal_control/core/tensorflow_state.py	/^        def matexp_op(uks, H_all):$/;"	f	member:TensorflowState.init_defined_functions	file:
+matexp_op_grad	quantum_optimal_control/core/tensorflow_state.py	/^        def matexp_op_grad(uks, H_all, grad):$/;"	f	member:TensorflowState.init_defined_functions	file:
+matvecexp_op	quantum_optimal_control/core/tensorflow_state.py	/^        def matvecexp_op(uks, H_all, psi):$/;"	f	member:TensorflowState.init_defined_functions	file:
+matvecexp_op_grad	quantum_optimal_control/core/tensorflow_state.py	/^        def matvecexp_op_grad(uks, H_all, psi, grad):$/;"	f	member:TensorflowState.init_defined_functions	file:
 max_iterations	test.py	/^max_iterations = 1000$/;"	v
 minimize_opt_fun	quantum_optimal_control/core/run_session.py	/^    def minimize_opt_fun(self, x):$/;"	m	class:run_session
 multi_kron	quantum_optimal_control/helper_functions/grape_functions.py	/^def multi_kron(op,num): $/;"	f

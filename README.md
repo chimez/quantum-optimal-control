@@ -1,96 +1,91 @@
-# fork and move to python3
-
-
-
-
-
+# 切换至python3
 # GRAPE-Tensorflow
 
-This is the code repository of our recent publication "Speedup for quantum optimal control from automatic differentiation based on graphics processing units" https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.042318
+这是我们最近出版的论文的代码仓库 "Speedup for quantum optimal control from automatic differentiation based on graphics processing units" https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.042318
 
-This is a software package that performs quantum optimal control using the automatic differentiation capabilities of [Tensorflow] (https://www.tensorflow.org/) and has full GPU support. Its main goal is to produce a set of optimal pulses to apply in a given period of time that will drive a quantum system to achieve a certain unitary gate or to reach a certain final quantum state with a fidelity as close as possible to unity. In addition, the user can add any penalties (cost functions) on either the control pulses or the quantum intermediate states and the code will automatically include this constraint in the optimization process without having to write down an analytical form for the gradient of the new cost function.    
+这是使用 [Tensorflow] (https://www.tensorflow.org/) 的自动微分和GPU支持能力来运行量子优化控制的软件包. 主要目标是产生一组优化的脉冲,用来在给定的时间周期内驱动量子系统实现某一种幺正门或者达到某种末态,而且要保证保真度尽可能一致. 此外,用户可以添加任何的价值函数(处罚)在控制脉冲或量子中间态上,而且代码会自动将这个部分包括进优化过程,而无需写这个新的价值函数的梯度的解析形式.    
 
-As an example of what the package produces, here is its output in the example of a qubit pi pulse:  
+作为包产生结果的例子,这个是qubit pi脉冲的输出:  
 
 
 ![Qubit Pi Pulse Example](http://i.imgur.com/OfqFqZ6.png)
 
-# Setup  
-You will just need to setup Tensorflow, Please follow the instructions [here] (https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html)  
+## 配置
+只需要配置Tensorflow, Please follow the instructions [here] (https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html)  
 
-Currently only supports linux system and Python 2.7.
+Linux系统Python 3
 
-# Currently Implemented Cost Functions  
-Refer to the [Regularization functions file] (https://github.com/SchusterLab/GRAPE-Tensorflow/blob/master/core/RegularizationFunctions.py) for details or to add a new cost function  
- **1) The fidelity cost function:** The overlap between the target unitary/final state and the achieved unitary/final state. In the code, it's referred to as tfs.loss.  
- **2) The gaussian envelope cost function:** A penalty if the control pulses do not have a gaussian envelope. The user supplies a coeffecient called **'envelope'** in the reg_coeffs input. A value of 0.01 is found to be a good statring value empirically.    
- **3) The first derivative cost function:** To make the control pulses smooth. The user supplies a coeffecient called **'dwdt'** in the reg_coeffs input. A value of 0.001 is found to be a good statring value empirically.  
- **4) The second derivative cost function:** To make the control pulses smooth. The user supplies a coeffecient called **'d2wdt2'** in the reg_coeffs input. A value of 0.000001 is found to be a good statring value empirically.  
- **5) The bandpass cost function:** To filter the control pulses frequency **'bandpass'** (start around 0.1) to supress control pulses frequency outside the defined band **'band'**. This cost function requires GPU, since TensorFlow QFT is only implemented in GPU.  
- **6) The forbidden state cost function:** A cost function to forbid the quantum occupation of certain levels through out the time of the control. The user supplies a coeffecinet called **'forbidden'** (start around 100 empirically) and a list called **'states_forbidden_list'** to specify the indices of the levels to forbid.  **forbid_dressed**: A boolean (default is True) to forbid dressed (hamiltonian's eigen vectors) vs bare states in coupled systems  
- **7) The time optimal cost function:** If the user wants to speed up the gate, he should provide a coeffecient called **'speed_up'** (start around 100) to award the occupation of the target state at all intermediate states, hence, making the gate as fast as possible.   
+## 目前实现的价值函数
+参见 [Regularization functions file] (https://github.com/SchusterLab/GRAPE-Tensorflow/blob/master/core/RegularizationFunctions.py) 或者添加一个新的价值函数
+ 1. 保真度(fidelity): 目标幺正变换(或末态)与产生的幺正变换(或末态)间的重叠. 在代码里是 tfs.loss
+ 2. 高斯波包(gaussian envelope):如果控制脉冲没有高斯波包的惩罚. 用户在输入选项 `reg_coeffs` 中提供一个系数 `envelope`. 经验上0.01是比较好的值.
+ 3. 一阶导数(first derivative):让控制脉冲平滑. 用户在输入选项 `reg_coeffs` 中提供一个系数 `dwdt`. 经验上0.001是比较好的值.
+ 4. 二阶导数(second derivative):让控制脉冲平滑. 用户在输入选项 `reg_coeffs` 中提供一个系数 `d2wdt2`. 经验上0.000001是比较好的值.
+ 5. 带通(bandpass): 过滤控制脉冲频率 `bandpass` (从0.1左右开始)压制控制脉冲频率小于界限`band`. 这个价值函数需要GPU,因为TensorFlow QFT只在GPU里有.
+ 6. 禁止态价值函数: 这是一个在整个时间控制范围内禁止量子占据某个态的价值函数用户提供一个参数 `forbidden` (经验上从100开始)和一个列表`states_forbidden_list` 来指定禁止的能级的序号.  `forbid_dressed`:一个布尔值(默认为真)禁止在耦合系统中缀饰(哈密顿量的本征向量)裸态.
+ 7: 时间优化价值函数: 如果用户想加速门,他应该提供一个参数`speed_up`(从大约100开始)来奖励在所有中间态里的目标态,因而让门尽可能快.   
 
 
- **To add a new cost function:**  
-Just follow the same logic we used and add new code [here](https://github.com/SchusterLab/GRAPE-Tensorflow/blob/master/core/RegularizationFunctions.py) penalizing properties of:  
-1) The control fields: held in **tfs.ops_weight**  
-and/or  
-2) The intermediate states: held in **tfs.inter_vecs**    
+ 增加一个新的价值函数:
+只要按照跟我们用的一样的逻辑增加新代码[here](https://github.com/SchusterLab/GRAPE-Tensorflow/blob/master/core/RegularizationFunctions.py)
+惩罚特性:
+1) 控制场:在`tfs.ops_weight`里
+和/或
+2) 中间态:在`tfs.inter_vecs`里     
  
 
-# Use   
- You should call this function:  
+## 使用
+ 你应该调用这个函数:
 ```python
 uks, U_final = Grape(H0,Hops,Hnames,U,total_time,steps,states_concerned_list,convergence, U0, 
 reg_coeffs,dressed_info, maxA ,use_gpu, draw, initial_guess, show_plots, H_time_scales, 
 unitary_error, method,state_transfer, no_scaling, freq_unit, file_name, save, data_path) 
 ```
  
- You can follow the [examples] (https://github.com/SchusterLab/GRAPE-Tensorflow-Examples/tree/master) we are providing for details on defining the quantum system and then calling the function. We suggest starting with a simple example (e.g. spin Pi).
+ 你可以按照[示例](https://github.com/SchusterLab/GRAPE-Tensorflow-Examples/tree/master)我们提供的详细信息关于定义量子体系，然后调用函数。我们建议从一个简单的例子开始(例如 spin Pi)。
+
+## 返回值：
+ `uks`: 优化的控制脉冲(一个floats列表的列表,其中每一个长度都等于`ctrl_steps(ctrl_op)`)与输入顺序相同.
+ `U_final`:末态演化算符(nxn)
  
-# Returns:  
- **uks:** The optimized control pulses  ( a list of list of floats, each of them has length  = ctrl_steps(ctrl_op) ) same order as the input  
- **U_final:** The final Unitary (n by n)  
+## 必须参数：
+ `H0`: 漂移哈密顿量(nxn)
+ `Hops`: 控制哈密顿量的列表(k个哈密顿量,每个都是nxn)
+ `Hnames`: 控制哈密顿量的名字的列表,k个string元素
+ `U`:目标演化算符(nxn)如果`state_transfer=False`一个矢量(nx1)如果`state_transfer=True`
+ `total_time`: 总时间(float)
+ `Steps`: 时间片段的数量(int)
+ `states_concerned_list`: 定义初态(初态为列表,其中包括需要控制的态,可以有多个,格式为`[np.array,np.array]`)或初始演化算符(nxn矩阵)
  
-# Mandatory Arguments:  
- **H0:** Drift Hamiltonian (n by n)   
- **Hops:** A list of Control Hamiltonians  (k hamiltonians, each is n by n)  
- **Hnames:** A list of Control Hamiltonian names, with k string elements  
- **U:** Target Unitary (n by n)  if state_transfer = False. a vector (n by 1) if state_transfer = True  
- **total_time:** Total Time (float)  
- **Steps:** Number of time steps (int)  
- **states_concerned_list:** Initial States (list of integers specifying the indices of those states)  
- 
-# Optional Arguments:  
- **U0:** Initial Unitary (n by n), default is identity  
- **convergence:** A dictionary (can be empty) that might include the following parameters with default values as shown:
+## 可选参数：
+ `U0`: 初始演化算符(nxn),默认是单位算符
+ `convergence`: 一个字典(可以是空的),可能包括下面的参数及其默认值
                 convergence = {'rate':0.01, 'update_step':100, 'max_iterations':5000,
-                'conv_target':1e-8,'learning_rate_decay':2500, 'min_grad': 1e-25}   
- **Initial_guess:** A list of k elements, each of them is a steps size array, defining the initial pulses for all operators. If not provided, a default value of a gaussian random distribution will be used.  
- **reg_coeffs:** A dictionary of regularization coeffecients  
- **dressed_info :** A dictionary including the eigenvalues and eigenstates of dressed states  
- **maxA:** a list of the maximum amplitudes of the control pulses (default value is 4)   
- **use_gpu:** a boolean switching gpu and cpu, default is True   
- **sparse_H, sparse_U, sparse_K:** booleans specifying whether (Hamiltonian, Unitary Operator, Unitary Evolution) is sparse. Speedup is expected if the corresponding sparsity is satisfied. (only available in CPU)  
- **use_inter_vecs:** a boolean enable/disable the involvement of state evolution in graph building  
- **draw:** a list including the indices and names for the states to include in drawing state occupation. Ex: states_draw_list = [0,1]
- states_draw_names = ['g00','g01','g10','g11','e00'] and  draw = [states_draw_list,states_draw_names]  
- default value is to draw states with indices 0-3  
- **show_plots:** a boolean (default is True) toggling between progress bar and graphs    
- **state_transfer:** a boolean (default is False) if True, targetting state transfer. If false, targetting unitary evolution. If True, the U is expected to be a vector, not a matrix.    
- **method:** 'ADAM', 'BFGS', 'L-BFGS-B' or 'EVOLVE'. Defining the optimizer. Default is ADAM. EVOLVE only simulate the propagation without optimizing.  
- **Unitary_error:** a float indicating the desired maximum error of the Taylor expansion of the exponential to choose a proper number of expansion terms, default is 1e-4  
- **no_scaling**:  a boolean (default is False)) to disable scaling and squaring  
- **Taylor_terms**: a list [expansion terms, scaling and squaring terms], manually choose the Taylor terms for matrix exponentials.  
- **freq_unit**: a string with default 'GHz'. Can be 'MHz', 'kHz' or 'Hz'  
- **file_name**: file name for saving the simulation  
- **save**: A boolean (default is True) to save the control ops, intermediate vectors, final unitary every update step  
- **data_path**: path for saving the simulation  
+                'conv_target':1e-8,'learning_rate_decay':2500, 'min_grad': 1e-25}
+ `initial_guess`: k个元素的列表,每个元素是步骤大小向量,定义了每个算符的初始脉冲. 如果不提供的，默认值为高斯随机分布。
+ `reg_coeffs`: 正规化参数的字典,这里定义了使用哪些价值函数
+ `dressed_info`:包括有缀饰态本征值和本证向量的字典
+ `maxA`:控制脉冲的最大振幅(默认值为4)
+ `use_gpu`:布尔值:切换使用GPU和CPU,默认为真
+ `sparse_H, sparse_U, sparse_K`:布尔值,指定(哈密顿量,幺正算符,幺正演化)是否是稀疏矩阵如果相应的稀疏度合适会加速计算(仅在CPU可用)
+ `use_inter_vecs`:布尔值,开启/关闭图构建中态演化的参与
+ `draw`:列表,包括在绘制态占据是包括的序号和名字Ex: `states_draw_list = [0,1], states_draw_names = ['g00','g01'] ,draw = [states_draw_list,states_draw_names]`
+       默认值是绘制序号为0-3的态
+ `show_plots`:布尔值(默认为真)在进度条和图表之间切换
+ `state_transfer`:布尔值(默认为假)如果为真,目标为态转移如果为假,目标为幺正变换如果为真，`U`预计将是一个矢量，不是一个矩阵。
+ `method`: 'ADAM', 'BFGS', 'L-BFGS-B' or 'EVOLVE'. 定义优化器默认是 `ADAM`. `EVOLVE` 只能模拟没有优化的传播.
+ `Unitary_error`:float,指出想要的e指数的泰勒展开的最大误差来选择合适的展开项数,默认为`1e-4`
+ `no_scaling`:布尔值(默认为假)禁用缩放和平方
+ `Taylor_terms`:列表`[展开项,缩放和平方项]`,例如`[20,0]`,手动选择矩阵e指数的泰勒展开项
+ `freq_unit`:字符串,默认为`GHz`可以是 'MHz', 'kHz' or 'Hz'
+ `file_name`:保存模拟结果的文件名
+ `save`:布尔值(默认为真)保存每一个新的步骤的控制算符,中间向量,末态演化
+ `data_path`:保存模拟结果的路径
  
-# More examples:
-We applied the optimizer to generate photonic Schrodinger cat states for a circuit quantum electrodynamics system:  
-![photonic Schrodinger cat states](http://i.imgur.com/ponY2R9.png)
+## 更多的例子：
+我们用优化器在电路量子电动力学系统中产生光子薛定谔猫态： 
+![光子薛定谔猫态](http://i.imgur.com/ponY2R9.png)
  
 
-# Questions
-If you have any questions, please reach either of the developers of the package: Nelson Leung (nelsonleung@uchicago.edu), Mohamed Abdelhafez (abdelhafez@uchicago.edu) or David Schuster (david.schuster@uchicago.edu)
+## 问题
+如果有问题,请联系包的开发者: Nelson Leung (nelsonleung@uchicago.edu), Mohamed Abdelhafez (abdelhafez@uchicago.edu) or David Schuster (david.schuster@uchicago.edu)
